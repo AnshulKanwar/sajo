@@ -1,56 +1,56 @@
 package internal
 
-type TokenType string
+//go:generate stringer -type=TokenType
+type TokenType int
 
-// TODO: is there not a better way
 const (
 	// Single-character tokens.
-	LEFT_PAREN  TokenType = "LEFT_PAREN"
-	RIGHT_PAREN TokenType = "RIGHT_PAREN"
-	LEFT_BRACE  TokenType = "LEFT_BRACE"
-	RIGHT_BRACE TokenType = "RIGHT_BRACE"
-	COMMA       TokenType = "COMMA"
-	DOT         TokenType = "DOT"
-	MINUS       TokenType = "DOT"
-	PLUS        TokenType = "PLUS"
-	SEMICOLON   TokenType = "SEMICOLON"
-	SLASH       TokenType = "SLASH"
-	STAR        TokenType = "STAR"
+	LEFT_PAREN TokenType = iota
+	RIGHT_PAREN
+	LEFT_BRACE
+	RIGHT_BRACE
+	COMMA
+	DOT
+	MINUS
+	PLUS
+	SEMICOLON
+	SLASH
+	STAR
 
 	// One or two character tokens.
-	BANG          TokenType = "BANG"
-	BANG_EQUAL    TokenType = "BANG_EQUAL"
-	EQUAL         TokenType = "EQUAL"
-	EQUAL_EQUAL   TokenType = "EQUAL_EQUAL"
-	GREATER       TokenType = "GREATER"
-	GREATER_EQUAL TokenType = "GREATER_EQUAL"
-	LESS          TokenType = "LESS"
-	LESS_EQUAL    TokenType = "LESS_EQUAL"
+	BANG
+	BANG_EQUAL
+	EQUAL
+	EQUAL_EQUAL
+	GREATER
+	GREATER_EQUAL
+	LESS
+	LESS_EQUAL
 
 	// Literals.
-	IDENTIFIER TokenType = "IDENTIFIER"
-	STRING     TokenType = "STRING"
-	NUMBER     TokenType = "NUMBER"
+	IDENTIFIER
+	STRING
+	NUMBER
 
 	// Keywords.
-	AND    TokenType = "AND"
-	CLASS  TokenType = "CLASS"
-	ELSE   TokenType = "ELSE"
-	FALSE  TokenType = "FALSE"
-	FUN    TokenType = "FUN"
-	FOR    TokenType = "FOR"
-	IF     TokenType = "IF"
-	NIL    TokenType = "NIL"
-	OR     TokenType = "OR"
-	PRINT  TokenType = "PRINT"
-	RETURN TokenType = "RETURN"
-	SUPER  TokenType = "SUPER"
-	THIS   TokenType = "THIS"
-	TRUE   TokenType = "TRUE"
-	VAR    TokenType = "VAR"
-	WHILE  TokenType = "WHILE"
+	AND
+	CLASS
+	ELSE
+	FALSE
+	FUN
+	FOR
+	IF
+	NIL
+	OR
+	PRINT
+	RETURN
+	SUPER
+	THIS
+	TRUE
+	VAR
+	WHILE
 
-	EOF TokenType = "EOF"
+	EOF
 )
 
 var Keywords = map[string]TokenType{
